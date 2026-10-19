@@ -1,0 +1,42 @@
+{
+  "ok": true,
+  "generated_at": "2026-10-19T17:24:05+08:00",
+  "pools": [
+    {
+      "name": "Gemini Models",
+      "label": "Gemini 模型池",
+      "windows": [
+        {
+          "key": "weekly",
+          "label": "周额度",
+          "remaining_pct": 100,
+          "resets_at": "2026-10-25T11:24:05Z"
+        },
+        {
+          "key": "five_hour",
+          "label": "5 小时额度",
+          "remaining_pct": 99,
+          "resets_at": "2026-10-19T13:44:05Z"
+        }
+      ]
+    },
+    {
+      "name": "Claude and GPT models",
+      "label": "Claude / GPT 模型池",
+      "windows": [
+        {
+          "key": "weekly",
+          "label": "周额度",
+          "remaining_pct": 100,
+          "resets_at": "2026-10-25T11:24:05Z"
+        },
+        {
+          "key": "five_hour",
+          "label": "5 小时额度",
+          "remaining_pct": 100,
+          "resets_at": "2026-10-19T13:44:05Z"
+        }
+      ]
+    }
+  ]
+}

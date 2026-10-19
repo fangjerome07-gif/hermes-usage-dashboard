@@ -1,0 +1,1080 @@
+{
+  "snapshot_bj": "2026-10-19T17:24:05+08:00",
+  "window_start_bj": "2026-10-19T16:08:05+08:00",
+  "pricing": {
+    "timezone": "Asia/Shanghai",
+    "sol_mode": "promotional",
+    "sol_effective_at_bj": "2026-10-07T13:17:27+08:00",
+    "sol_promotion_end_date_bj": "2026-11-21",
+    "sol_standard_restored_from_date_bj": "2026-11-22",
+    "sol_input_usd_per_1m": 4.0,
+    "sol_cached_input_usd_per_1m": 0.4,
+    "sol_output_usd_per_1m": 20.0,
+    "model_pricing": {
+      "unit": "USD per 1M tokens",
+      "cache_write_rule": "uncached input × 1.25 unless the source omits a cache-write rate",
+      "models": {
+        "gpt-6-astra": {
+          "label": "GPT-6 Astra",
+          "current": {
+            "input_usd_per_1m": 10.0,
+            "cached_input_usd_per_1m": 1.0,
+            "cache_write_usd_per_1m": 12.5,
+            "output_usd_per_1m": 50.0
+          }
+        },
+        "gpt-6.1-sol": {
+          "label": "GPT-6.1 Sol",
+          "current": {
+            "input_usd_per_1m": 2.0,
+            "cached_input_usd_per_1m": 0.1,
+            "cache_write_usd_per_1m": 2.5,
+            "output_usd_per_1m": 10.0
+          }
+        },
+        "gpt-6-sol": {
+          "label": "GPT-6 Sol",
+          "current": {
+            "input_usd_per_1m": 2.0,
+            "cached_input_usd_per_1m": 0.2,
+            "cache_write_usd_per_1m": 2.5,
+            "output_usd_per_1m": 10.0
+          }
+        },
+        "gpt-6-luna": {
+          "label": "GPT-6 Luna",
+          "current": {
+            "input_usd_per_1m": 0.1,
+            "cached_input_usd_per_1m": 0.01,
+            "cache_write_usd_per_1m": 0.125,
+            "output_usd_per_1m": 0.5
+          }
+        },
+        "gpt-5.6-sol": {
+          "label": "GPT-5.6 Sol",
+          "current": {
+            "input_usd_per_1m": 4.0,
+            "cached_input_usd_per_1m": 0.4,
+            "cache_write_usd_per_1m": 5.0,
+            "output_usd_per_1m": 20.0
+          },
+          "mode": "promotional",
+          "standard": {
+            "input_usd_per_1m": 5.0,
+            "cached_input_usd_per_1m": 0.5,
+            "cache_write_usd_per_1m": 6.25,
+            "output_usd_per_1m": 30.0
+          }
+        },
+        "gpt-daybreak-blue-latest": {
+          "label": "Daybreak Blue",
+          "current": {
+            "input_usd_per_1m": 4.0,
+            "cached_input_usd_per_1m": 0.4,
+            "cache_write_usd_per_1m": 5.0,
+            "output_usd_per_1m": 20.0
+          },
+          "mode": "promotional",
+          "standard": {
+            "input_usd_per_1m": 5.0,
+            "cached_input_usd_per_1m": 0.5,
+            "cache_write_usd_per_1m": 6.25,
+            "output_usd_per_1m": 30.0
+          }
+        },
+        "gpt-5.6-cyber": {
+          "label": "GPT-5.6 Cyber / Daybreak Red",
+          "current": {
+            "input_usd_per_1m": 12.5,
+            "cached_input_usd_per_1m": 1.25,
+            "cache_write_usd_per_1m": 15.625,
+            "output_usd_per_1m": 75.0
+          }
+        },
+        "gpt-5.6-terra": {
+          "label": "GPT-5.6 Terra",
+          "current": {
+            "input_usd_per_1m": 2.0,
+            "cached_input_usd_per_1m": 0.2,
+            "cache_write_usd_per_1m": 2.5,
+            "output_usd_per_1m": 12.0
+          }
+        },
+        "gpt-5.6-luna": {
+          "label": "GPT-5.6 Luna",
+          "current": {
+            "input_usd_per_1m": 0.2,
+            "cached_input_usd_per_1m": 0.02,
+            "cache_write_usd_per_1m": 0.25,
+            "output_usd_per_1m": 1.2
+          }
+        },
+        "gpt-image-2 (image)": {
+          "label": "GPT-Image-2 (image)",
+          "current": {
+            "input_usd_per_1m": 4.0,
+            "cached_input_usd_per_1m": 1.0,
+            "cache_write_usd_per_1m": null,
+            "output_usd_per_1m": 15.0
+          },
+          "codex_credits_per_1m": {
+            "input": 200.0,
+            "cached_input": 50.0,
+            "output": 750.0
+          }
+        },
+        "gpt-image-2 (text)": {
+          "label": "GPT-Image-2 (text)",
+          "current": {
+            "input_usd_per_1m": 2.5,
+            "cached_input_usd_per_1m": 0.625,
+            "cache_write_usd_per_1m": null,
+            "output_usd_per_1m": 10.0
+          },
+          "codex_credits_per_1m": {
+            "input": 125.0,
+            "cached_input": 31.25,
+            "output": 250.0
+          }
+        },
+        "gpt-5.5": {
+          "label": "GPT-5.5",
+          "current": {
+            "input_usd_per_1m": 5.0,
+            "cached_input_usd_per_1m": 0.5,
+            "cache_write_usd_per_1m": 6.25,
+            "output_usd_per_1m": 30.0
+          }
+        },
+        "gpt-5.4": {
+          "label": "GPT-5.4",
+          "current": {
+            "input_usd_per_1m": 2.5,
+            "cached_input_usd_per_1m": 0.25,
+            "cache_write_usd_per_1m": 3.125,
+            "output_usd_per_1m": 15.0
+          }
+        },
+        "gpt-5.4-mini": {
+          "label": "GPT-5.4 mini",
+          "current": {
+            "input_usd_per_1m": 0.75,
+            "cached_input_usd_per_1m": 0.075,
+            "cache_write_usd_per_1m": 0.9375,
+            "output_usd_per_1m": 4.5
+          }
+        }
+      },
+      "codex_source_url": "https://developers.openai.com/codex/pricing",
+      "api_source_url": "https://developers.openai.com/api/docs/pricing"
+    }
+  },
+  "quota": {
+    "plan": "plus",
+    "allowed": true,
+    "limit_reached": false,
+    "used_percent": 5,
+    "window_seconds": 604800.0,
+    "window_start": 1792397271.902136,
+    "reset_at": 1792415271.902136,
+    "secondary": {
+      "used_percent": 5,
+      "limit_window_seconds": 604800,
+      "reset_after_seconds": 600226,
+      "reset_at": 1793002071.902136,
+      "window_seconds": 604800.0,
+      "window_start": 1792397271.902136
+    },
+    "primary_window": {
+      "used_percent": 32,
+      "limit_window_seconds": 18000,
+      "reset_after_seconds": 13426,
+      "reset_at": 1792415271.902136,
+      "window_seconds": 18000.0,
+      "window_start": 1792397271.902136
+    },
+    "secondary_window": {
+      "used_percent": 5,
+      "limit_window_seconds": 604800,
+      "reset_after_seconds": 600226,
+      "reset_at": 1793002071.902136,
+      "window_seconds": 604800.0,
+      "window_start": 1792397271.902136
+    },
+    "window_basis": "secondary_window",
+    "credits": {
+      "has_credits": false,
+      "unlimited": false,
+      "overage_limit_reached": false,
+      "balance": "0",
+      "approx_local_messages": [
+        0,
+        0
+      ],
+      "approx_cloud_messages": [
+        0,
+        0
+      ]
+    },
+    "rate_limit_reached_type": null
+  },
+  "quota_error": null,
+  "official": {
+    "available": false,
+    "usage_available": false,
+    "rate_limits_available": false,
+    "summary": {},
+    "daily_usage_buckets": [],
+    "rate_limits_by_limit_id": {},
+    "rate_limit_reset_credits": {},
+    "error": "Codex app-server binary not found"
+  },
+  "active_instances": [
+    {
+      "name": "default",
+      "path": "/home/you/.hermes",
+      "db_exists": true,
+      "sessions": 0,
+      "api_calls": 6,
+      "models": {
+        "gpt-6.1-sol": 1
+      },
+      "model_usage": {
+        "gpt-6.1-sol": {
+          "sessions": 0,
+          "api_calls": 6,
+          "tokens": {
+            "input": 138789,
+            "cache_read": 1270144,
+            "cache_write": 0,
+            "output": 14541,
+            "reasoning": 4636
+          },
+          "api_equivalent_usd": 0.231,
+          "credits_equivalent": 5.775
+        }
+      },
+      "billing_modes": {
+        "subscription_included": 1
+      },
+      "tokens": {
+        "input": 138789,
+        "cache_read": 1270144,
+        "cache_write": 0,
+        "output": 14541,
+        "reasoning": 4636
+      },
+      "api_equivalent_usd": 0.231,
+      "credits_equivalent": 5.775,
+      "unknown_models": [],
+      "aux": {
+        "tasks": {},
+        "model_usage": {},
+        "api_calls": 0,
+        "tokens": {
+          "input": 0,
+          "cache_read": 0,
+          "cache_write": 0,
+          "output": 0,
+          "reasoning": 0
+        },
+        "api_equivalent_usd": 0.0,
+        "credits_equivalent": 0.0,
+        "unknown_models": [],
+        "window_boundary_excluded": {
+          "api_calls": 0,
+          "tokens": {
+            "input": 0,
+            "cache_read": 0,
+            "cache_write": 0,
+            "output": 0,
+            "reasoning": 0
+          }
+        }
+      },
+      "window_boundary": {
+        "cross_window_sessions": 0,
+        "log_recovered_sessions": 0,
+        "unresolved_sessions": 0,
+        "missing_cache_records": 0,
+        "excluded_aux_calls": 0,
+        "excluded_aux_tokens": {
+          "input": 0,
+          "cache_read": 0,
+          "cache_write": 0,
+          "output": 0,
+          "reasoning": 0
+        }
+      },
+      "long_context_calls": 0,
+      "long_context_usage": {
+        "api_calls": 0,
+        "models": {},
+        "tokens": {
+          "input": 0,
+          "cache_read": 0,
+          "cache_write": 0,
+          "output": 0,
+          "reasoning": 0
+        },
+        "base_api_equivalent_usd": 0.0,
+        "long_context_api_equivalent_usd": 0.0,
+        "extra_api_equivalent_usd": 0.0,
+        "base_credits_equivalent": 0.0,
+        "long_context_credits_equivalent": 0.0,
+        "extra_credits_equivalent": 0.0,
+        "missing_cache": 0
+      },
+      "self_review": {
+        "skill": 2,
+        "memory": 0
+      }
+    },
+    {
+      "name": "workspace-a",
+      "path": "/home/you/.hermes/profiles/workspace-a",
+      "db_exists": true,
+      "sessions": 1,
+      "api_calls": 11,
+      "models": {
+        "gpt-6.1-sol": 1,
+        "gpt-5.6-luna": 1
+      },
+      "model_usage": {
+        "gpt-6.1-sol": {
+          "sessions": 0,
+          "api_calls": 11,
+          "tokens": {
+            "input": 257323,
+            "cache_read": 4765440,
+            "cache_write": 0,
+            "output": 19269,
+            "reasoning": 4690
+          },
+          "api_equivalent_usd": 0.4972,
+          "credits_equivalent": 12.4307
+        },
+        "gpt-5.6-luna": {
+          "sessions": 0,
+          "api_calls": 0,
+          "tokens": {
+            "input": 40759,
+            "cache_read": 0,
+            "cache_write": 0,
+            "output": 621,
+            "reasoning": 0
+          },
+          "api_equivalent_usd": 0.0037,
+          "credits_equivalent": 0.0934
+        }
+      },
+      "billing_modes": {
+        "subscription_included": 1
+      },
+      "tokens": {
+        "input": 298082,
+        "cache_read": 4765440,
+        "cache_write": 0,
+        "output": 19890,
+        "reasoning": 4690
+      },
+      "api_equivalent_usd": 0.501,
+      "credits_equivalent": 12.5242,
+      "unknown_models": [],
+      "aux": {
+        "tasks": {},
+        "model_usage": {},
+        "api_calls": 0,
+        "tokens": {
+          "input": 0,
+          "cache_read": 0,
+          "cache_write": 0,
+          "output": 0,
+          "reasoning": 0
+        },
+        "api_equivalent_usd": 0.0,
+        "credits_equivalent": 0.0,
+        "unknown_models": [],
+        "window_boundary_excluded": {
+          "api_calls": 0,
+          "tokens": {
+            "input": 0,
+            "cache_read": 0,
+            "cache_write": 0,
+            "output": 0,
+            "reasoning": 0
+          }
+        }
+      },
+      "window_boundary": {
+        "cross_window_sessions": 0,
+        "log_recovered_sessions": 0,
+        "unresolved_sessions": 0,
+        "missing_cache_records": 1,
+        "excluded_aux_calls": 0,
+        "excluded_aux_tokens": {
+          "input": 0,
+          "cache_read": 0,
+          "cache_write": 0,
+          "output": 0,
+          "reasoning": 0
+        }
+      },
+      "long_context_calls": 0,
+      "long_context_usage": {
+        "api_calls": 0,
+        "models": {},
+        "tokens": {
+          "input": 0,
+          "cache_read": 0,
+          "cache_write": 0,
+          "output": 0,
+          "reasoning": 0
+        },
+        "base_api_equivalent_usd": 0.0,
+        "long_context_api_equivalent_usd": 0.0,
+        "extra_api_equivalent_usd": 0.0,
+        "base_credits_equivalent": 0.0,
+        "long_context_credits_equivalent": 0.0,
+        "extra_credits_equivalent": 0.0,
+        "missing_cache": 0
+      },
+      "self_review": {
+        "skill": 2,
+        "memory": 0
+      }
+    },
+    {
+      "name": "workspace-b",
+      "path": "/home/you/.hermes/profiles/workspace-b",
+      "db_exists": true,
+      "sessions": 0,
+      "api_calls": 0,
+      "models": {},
+      "model_usage": {},
+      "billing_modes": {},
+      "tokens": {
+        "input": 0,
+        "cache_read": 0,
+        "cache_write": 0,
+        "output": 0,
+        "reasoning": 0
+      },
+      "api_equivalent_usd": 0.0,
+      "credits_equivalent": 0.0,
+      "unknown_models": [],
+      "aux": {
+        "tasks": {},
+        "model_usage": {},
+        "api_calls": 0,
+        "tokens": {
+          "input": 0,
+          "cache_read": 0,
+          "cache_write": 0,
+          "output": 0,
+          "reasoning": 0
+        },
+        "api_equivalent_usd": 0.0,
+        "credits_equivalent": 0.0,
+        "unknown_models": [],
+        "window_boundary_excluded": {
+          "api_calls": 0,
+          "tokens": {
+            "input": 0,
+            "cache_read": 0,
+            "cache_write": 0,
+            "output": 0,
+            "reasoning": 0
+          }
+        }
+      },
+      "window_boundary": {
+        "cross_window_sessions": 0,
+        "log_recovered_sessions": 0,
+        "unresolved_sessions": 0,
+        "missing_cache_records": 0,
+        "excluded_aux_calls": 0,
+        "excluded_aux_tokens": {
+          "input": 0,
+          "cache_read": 0,
+          "cache_write": 0,
+          "output": 0,
+          "reasoning": 0
+        }
+      },
+      "long_context_calls": 0,
+      "long_context_usage": {
+        "api_calls": 0,
+        "models": {},
+        "tokens": {
+          "input": 0,
+          "cache_read": 0,
+          "cache_write": 0,
+          "output": 0,
+          "reasoning": 0
+        },
+        "base_api_equivalent_usd": 0.0,
+        "long_context_api_equivalent_usd": 0.0,
+        "extra_api_equivalent_usd": 0.0,
+        "base_credits_equivalent": 0.0,
+        "long_context_credits_equivalent": 0.0,
+        "extra_credits_equivalent": 0.0,
+        "missing_cache": 0
+      },
+      "self_review": {
+        "skill": 0,
+        "memory": 0
+      }
+    },
+    {
+      "name": "workspace-c",
+      "path": "/home/you/.hermes/profiles/workspace-c",
+      "db_exists": true,
+      "sessions": 0,
+      "api_calls": 0,
+      "models": {},
+      "model_usage": {},
+      "billing_modes": {},
+      "tokens": {
+        "input": 0,
+        "cache_read": 0,
+        "cache_write": 0,
+        "output": 0,
+        "reasoning": 0
+      },
+      "api_equivalent_usd": 0.0,
+      "credits_equivalent": 0.0,
+      "unknown_models": [],
+      "aux": {
+        "tasks": {},
+        "model_usage": {},
+        "api_calls": 0,
+        "tokens": {
+          "input": 0,
+          "cache_read": 0,
+          "cache_write": 0,
+          "output": 0,
+          "reasoning": 0
+        },
+        "api_equivalent_usd": 0.0,
+        "credits_equivalent": 0.0,
+        "unknown_models": [],
+        "window_boundary_excluded": {
+          "api_calls": 0,
+          "tokens": {
+            "input": 0,
+            "cache_read": 0,
+            "cache_write": 0,
+            "output": 0,
+            "reasoning": 0
+          }
+        }
+      },
+      "window_boundary": {
+        "cross_window_sessions": 0,
+        "log_recovered_sessions": 0,
+        "unresolved_sessions": 0,
+        "missing_cache_records": 0,
+        "excluded_aux_calls": 0,
+        "excluded_aux_tokens": {
+          "input": 0,
+          "cache_read": 0,
+          "cache_write": 0,
+          "output": 0,
+          "reasoning": 0
+        }
+      },
+      "long_context_calls": 0,
+      "long_context_usage": {
+        "api_calls": 0,
+        "models": {},
+        "tokens": {
+          "input": 0,
+          "cache_read": 0,
+          "cache_write": 0,
+          "output": 0,
+          "reasoning": 0
+        },
+        "base_api_equivalent_usd": 0.0,
+        "long_context_api_equivalent_usd": 0.0,
+        "extra_api_equivalent_usd": 0.0,
+        "base_credits_equivalent": 0.0,
+        "long_context_credits_equivalent": 0.0,
+        "extra_credits_equivalent": 0.0,
+        "missing_cache": 0
+      },
+      "self_review": {
+        "skill": 0,
+        "memory": 0
+      }
+    },
+    {
+      "name": "workspace-d",
+      "path": "/home/you/.hermes/profiles/workspace-d",
+      "db_exists": true,
+      "sessions": 0,
+      "api_calls": 0,
+      "models": {},
+      "model_usage": {},
+      "billing_modes": {},
+      "tokens": {
+        "input": 0,
+        "cache_read": 0,
+        "cache_write": 0,
+        "output": 0,
+        "reasoning": 0
+      },
+      "api_equivalent_usd": 0.0,
+      "credits_equivalent": 0.0,
+      "unknown_models": [],
+      "aux": {
+        "tasks": {},
+        "model_usage": {},
+        "api_calls": 0,
+        "tokens": {
+          "input": 0,
+          "cache_read": 0,
+          "cache_write": 0,
+          "output": 0,
+          "reasoning": 0
+        },
+        "api_equivalent_usd": 0.0,
+        "credits_equivalent": 0.0,
+        "unknown_models": [],
+        "window_boundary_excluded": {
+          "api_calls": 0,
+          "tokens": {
+            "input": 0,
+            "cache_read": 0,
+            "cache_write": 0,
+            "output": 0,
+            "reasoning": 0
+          }
+        }
+      },
+      "window_boundary": {
+        "cross_window_sessions": 0,
+        "log_recovered_sessions": 0,
+        "unresolved_sessions": 0,
+        "missing_cache_records": 0,
+        "excluded_aux_calls": 0,
+        "excluded_aux_tokens": {
+          "input": 0,
+          "cache_read": 0,
+          "cache_write": 0,
+          "output": 0,
+          "reasoning": 0
+        }
+      },
+      "long_context_calls": 0,
+      "long_context_usage": {
+        "api_calls": 0,
+        "models": {},
+        "tokens": {
+          "input": 0,
+          "cache_read": 0,
+          "cache_write": 0,
+          "output": 0,
+          "reasoning": 0
+        },
+        "base_api_equivalent_usd": 0.0,
+        "long_context_api_equivalent_usd": 0.0,
+        "extra_api_equivalent_usd": 0.0,
+        "base_credits_equivalent": 0.0,
+        "long_context_credits_equivalent": 0.0,
+        "extra_credits_equivalent": 0.0,
+        "missing_cache": 0
+      },
+      "self_review": {
+        "skill": 0,
+        "memory": 0
+      }
+    }
+  ],
+  "hermes_total": {
+    "sessions": 1,
+    "api_calls": 17,
+    "long_context_calls": 0,
+    "long_context_usage": {
+      "api_calls": 0,
+      "models": {},
+      "tokens": {
+        "input": 0,
+        "cache_read": 0,
+        "cache_write": 0,
+        "output": 0,
+        "reasoning": 0
+      },
+      "base_api_equivalent_usd": 0.0,
+      "long_context_api_equivalent_usd": 0.0,
+      "extra_api_equivalent_usd": 0.0,
+      "base_credits_equivalent": 0.0,
+      "long_context_credits_equivalent": 0.0,
+      "extra_credits_equivalent": 0.0,
+      "missing_cache": 0
+    },
+    "aux": {},
+    "aux_summary": {
+      "api_calls": 0,
+      "tokens": {
+        "input": 0,
+        "cache_read": 0,
+        "cache_write": 0,
+        "output": 0,
+        "reasoning": 0
+      },
+      "api_equivalent_usd": 0.0,
+      "credits_equivalent": 0.0
+    },
+    "model_usage": {
+      "gpt-6.1-sol": {
+        "sessions": 1,
+        "api_calls": 17,
+        "tokens": {
+          "input": 396112,
+          "cache_read": 6035584,
+          "cache_write": 0,
+          "output": 33810,
+          "reasoning": 9326
+        },
+        "api_equivalent_usd": 0.7282,
+        "credits_equivalent": 18.2058
+      },
+      "gpt-5.6-luna": {
+        "sessions": 0,
+        "api_calls": 0,
+        "tokens": {
+          "input": 40759,
+          "cache_read": 0,
+          "cache_write": 0,
+          "output": 621,
+          "reasoning": 0
+        },
+        "api_equivalent_usd": 0.0037,
+        "credits_equivalent": 0.0934
+      }
+    },
+    "tokens": {
+      "input": 436871,
+      "cache_read": 6035584,
+      "cache_write": 0,
+      "output": 34431,
+      "reasoning": 9326
+    },
+    "api_equivalent_usd": 0.732,
+    "credits_equivalent": 18.2992
+  },
+  "self_review_total": {
+    "skill": 4,
+    "memory": 0
+  },
+  "local_codex": {
+    "available": true,
+    "path": "/home/you/.codex/sessions",
+    "window_start_bj": "2026-10-07T12:01:12+08:00",
+    "files_scanned": 627,
+    "unreadable_files": 0,
+    "sessions": 0,
+    "api_calls": 77,
+    "sources": {
+      "codex_exec": {
+        "sessions": 0,
+        "api_calls": 77,
+        "tokens": {
+          "input": 732034,
+          "cache_read": 31092992,
+          "cache_write": 0,
+          "output": 86645,
+          "reasoning": 41928
+        },
+        "api_equivalent_usd": 0.3943,
+        "credits_equivalent": 9.8587
+      }
+    },
+    "models": {
+      "gpt-5.6-luna": 1
+    },
+    "model_usage": {
+      "gpt-5.6-luna": {
+        "sessions": 0,
+        "api_calls": 77,
+        "tokens": {
+          "input": 732034,
+          "cache_read": 31092992,
+          "cache_write": 0,
+          "output": 86645,
+          "reasoning": 41928
+        },
+        "api_equivalent_usd": 0.3943,
+        "credits_equivalent": 9.8587
+      }
+    },
+    "tokens": {
+      "input": 732034,
+      "cache_read": 31092992,
+      "cache_write": 0,
+      "output": 86645,
+      "reasoning": 41928
+    },
+    "api_equivalent_usd": 0.3943,
+    "credits_equivalent": 9.8587,
+    "unknown_models": [],
+    "long_context_calls": 5,
+    "long_context_usage": {
+      "api_calls": 5,
+      "models": {
+        "gpt-5.6-luna": {
+          "api_calls": 5,
+          "tokens": {
+            "input": 16318,
+            "cache_read": 3028224,
+            "cache_write": 0,
+            "output": 4766,
+            "reasoning": 1736
+          },
+          "base_api_equivalent_usd": 0.0292,
+          "long_context_api_equivalent_usd": 0.0572,
+          "extra_api_equivalent_usd": 0.028,
+          "base_credits_equivalent": 0.7302,
+          "long_context_credits_equivalent": 1.4305,
+          "extra_credits_equivalent": 0.7002,
+          "missing_cache": 0
+        }
+      },
+      "tokens": {
+        "input": 16318,
+        "cache_read": 3028224,
+        "cache_write": 0,
+        "output": 4766,
+        "reasoning": 1736
+      },
+      "base_api_equivalent_usd": 0.0292,
+      "long_context_api_equivalent_usd": 0.0572,
+      "extra_api_equivalent_usd": 0.028,
+      "base_credits_equivalent": 0.7302,
+      "long_context_credits_equivalent": 1.4305,
+      "extra_credits_equivalent": 0.7002,
+      "missing_cache": 0
+    }
+  },
+  "total": {
+    "sessions": 2,
+    "api_calls": 94,
+    "long_context_calls": 5,
+    "long_context_usage": {
+      "api_calls": 5,
+      "models": {
+        "gpt-5.6-luna": {
+          "api_calls": 5,
+          "tokens": {
+            "input": 16318,
+            "cache_read": 3028224,
+            "cache_write": 0,
+            "output": 4766,
+            "reasoning": 1736
+          },
+          "base_api_equivalent_usd": 0.0292,
+          "long_context_api_equivalent_usd": 0.0572,
+          "extra_api_equivalent_usd": 0.028,
+          "base_credits_equivalent": 0.7302,
+          "long_context_credits_equivalent": 1.4305,
+          "extra_credits_equivalent": 0.7002,
+          "missing_cache": 0
+        }
+      },
+      "tokens": {
+        "input": 16318,
+        "cache_read": 3028224,
+        "cache_write": 0,
+        "output": 4766,
+        "reasoning": 1736
+      },
+      "base_api_equivalent_usd": 0.0292,
+      "long_context_api_equivalent_usd": 0.0572,
+      "extra_api_equivalent_usd": 0.028,
+      "base_credits_equivalent": 0.7302,
+      "long_context_credits_equivalent": 1.4305,
+      "extra_credits_equivalent": 0.7002,
+      "missing_cache": 0
+    },
+    "aux": {},
+    "aux_summary": {
+      "api_calls": 0,
+      "tokens": {
+        "input": 0,
+        "cache_read": 0,
+        "cache_write": 0,
+        "output": 0,
+        "reasoning": 0
+      },
+      "api_equivalent_usd": 0.0,
+      "credits_equivalent": 0.0
+    },
+    "model_usage": {
+      "gpt-6.1-sol": {
+        "sessions": 1,
+        "api_calls": 17,
+        "tokens": {
+          "input": 396112,
+          "cache_read": 6035584,
+          "cache_write": 0,
+          "output": 33810,
+          "reasoning": 9326
+        },
+        "api_equivalent_usd": 0.7282,
+        "credits_equivalent": 18.2058
+      },
+      "gpt-5.6-luna": {
+        "sessions": 1,
+        "api_calls": 77,
+        "tokens": {
+          "input": 772793,
+          "cache_read": 31092992,
+          "cache_write": 0,
+          "output": 87266,
+          "reasoning": 41928
+        },
+        "api_equivalent_usd": 0.3981,
+        "credits_equivalent": 9.9522
+      }
+    },
+    "tokens": {
+      "input": 1168905,
+      "cache_read": 37128576,
+      "cache_write": 0,
+      "output": 121076,
+      "reasoning": 51254
+    },
+    "api_equivalent_usd": 1.1263,
+    "credits_equivalent": 28.1579,
+    "implied_full_window_usd": 22.5263,
+    "implied_full_window_credits": 563.16
+  },
+  "window_totals": {
+    "secondary_window": {
+      "used_percent": 5,
+      "window_seconds": 604800.0,
+      "window_start": 1792397271.902136,
+      "reset_at": 1793002071.902136,
+      "sessions": 2,
+      "api_calls": 94,
+      "long_context_calls": 5,
+      "long_context_usage": {
+        "api_calls": 5,
+        "models": {
+          "gpt-5.6-luna": {
+            "api_calls": 5,
+            "tokens": {
+              "input": 16318,
+              "cache_read": 3028224,
+              "cache_write": 0,
+              "output": 4766,
+              "reasoning": 1736
+            },
+            "base_api_equivalent_usd": 0.0292,
+            "long_context_api_equivalent_usd": 0.0572,
+            "extra_api_equivalent_usd": 0.028,
+            "base_credits_equivalent": 0.7302,
+            "long_context_credits_equivalent": 1.4305,
+            "extra_credits_equivalent": 0.7002,
+            "missing_cache": 0
+          }
+        },
+        "tokens": {
+          "input": 16318,
+          "cache_read": 3028224,
+          "cache_write": 0,
+          "output": 4766,
+          "reasoning": 1736
+        },
+        "base_api_equivalent_usd": 0.0292,
+        "long_context_api_equivalent_usd": 0.0572,
+        "extra_api_equivalent_usd": 0.028,
+        "base_credits_equivalent": 0.7302,
+        "long_context_credits_equivalent": 1.4305,
+        "extra_credits_equivalent": 0.7002,
+        "missing_cache": 0
+      },
+      "tokens": {
+        "input": 1168905,
+        "cache_read": 37128576,
+        "cache_write": 0,
+        "output": 121076,
+        "reasoning": 51254
+      },
+      "api_equivalent_usd": 1.1263,
+      "credits_equivalent": 28.1579,
+      "implied_full_window_usd": 22.5263,
+      "implied_full_window_credits": 563.16
+    },
+    "primary_window": {
+      "used_percent": 32,
+      "window_seconds": 18000.0,
+      "window_start": 1792397271.902136,
+      "reset_at": 1792415271.902136,
+      "sessions": 2,
+      "api_calls": 94,
+      "long_context_calls": 5,
+      "long_context_usage": {
+        "api_calls": 5,
+        "models": {
+          "gpt-5.6-luna": {
+            "api_calls": 5,
+            "tokens": {
+              "input": 16318,
+              "cache_read": 3028224,
+              "cache_write": 0,
+              "output": 4766,
+              "reasoning": 1736
+            },
+            "base_api_equivalent_usd": 0.0292,
+            "long_context_api_equivalent_usd": 0.0572,
+            "extra_api_equivalent_usd": 0.028,
+            "base_credits_equivalent": 0.7302,
+            "long_context_credits_equivalent": 1.4305,
+            "extra_credits_equivalent": 0.7002,
+            "missing_cache": 0
+          }
+        },
+        "tokens": {
+          "input": 16318,
+          "cache_read": 3028224,
+          "cache_write": 0,
+          "output": 4766,
+          "reasoning": 1736
+        },
+        "base_api_equivalent_usd": 0.0292,
+        "long_context_api_equivalent_usd": 0.0572,
+        "extra_api_equivalent_usd": 0.028,
+        "base_credits_equivalent": 0.7302,
+        "long_context_credits_equivalent": 1.4305,
+        "extra_credits_equivalent": 0.7002,
+        "missing_cache": 0
+      },
+      "tokens": {
+        "input": 1168905,
+        "cache_read": 37128576,
+        "cache_write": 0,
+        "output": 121076,
+        "reasoning": 51254
+      },
+      "api_equivalent_usd": 1.1263,
+      "credits_equivalent": 28.1579,
+      "implied_full_window_usd": 3.5197,
+      "implied_full_window_credits": 87.99
+    }
+  },
+  "notes": [
+    "API-equivalent prices are estimates, not subscription charges.",
+    "The server percentage is account-level; the unified ledger covers the five active Hermes instances plus persisted Codex rollout records.",
+    "Hermes auxiliary calls are included in local totals, model totals, and window estimates; they are also listed separately for auditability.",
+    "Official account activity from Codex app-server is an account-level cross-check and is not added to the unified ledger.",
+    "Direct Codex records with an unknown model are included in token flow but excluded from API-equivalent cost.",
+    "Codex rollout token_count events with unchanged total_token_usage are counted once; zero-usage compaction markers are excluded.",
+    "Hermes sessions crossing a quota-window boundary are rebuilt from retained per-call agent.log records; unresolved sessions are excluded rather than using cumulative totals.",
+    "Long-context records are counted per recorded Hermes agent.log call and local Codex rollout request when supported GPT-6 Astra/Sol/Luna (including GPT-6.1 Sol), GPT-5.6/GPT-5.5/GPT-5.4 input exceeds 272,000; their per-model surcharge is included in the unified API-equivalent total. Hermes log records without cache detail are priced conservatively as uncached.",
+    "The model price section uses official OpenAI API/Codex rate cards; GPT-5.6 Sol alone uses promotional pricing through 2026-11-21 Beijing date and automatically restores standard pricing from 2026-11-22.",
+    "Full-window inference is a rough estimate from the local ledger and account-level used percentage, not an official quota.",
+    "personal.quarantined and non-Codex providers are excluded."
+  ]
+}

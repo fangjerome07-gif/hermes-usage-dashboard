@@ -1,0 +1,180 @@
+{
+  "ok": true,
+  "generated_at": "2026-10-19T17:24:05+08:00",
+  "host": {
+    "model": "Mac mini",
+    "chip": "Apple M4",
+    "cores": 10,
+    "ram_total": 17179869184
+  },
+  "disk": {
+    "total": 1067299373056,
+    "used": 764504178688,
+    "free": 302795194368,
+    "used_pct": 71.6,
+    "free_pct": 28.4
+  },
+  "memory": {
+    "ram_total": 17179869184,
+    "ram_usage": 11811160064,
+    "swap_total": 2147483648,
+    "swap_usage": 644245094.4,
+    "detail": {
+      "active": 6442450944,
+      "inactive": 2147483648,
+      "wired": 2147483648,
+      "compressor": 1073741824,
+      "free": 5368709120,
+      "speculative": 107374182.4
+    }
+  },
+  "temp": {
+    "cpu": 52.3,
+    "gpu": 0.0
+  },
+  "fans": [
+    {
+      "max_rpm": 4900,
+      "name": "左侧风扇",
+      "rpm": 1180
+    }
+  ],
+  "load": {
+    "load1": 1.8,
+    "load5": 2.1,
+    "load15": 1.9,
+    "cores": 10
+  },
+  "uptime_seconds": 864000,
+  "power": {
+    "cpu": 2.1,
+    "gpu": 0.4,
+    "ane": 0.0,
+    "sys": 1.2
+  },
+  "cpu_tiers": [
+    {
+      "label": "E",
+      "freq_mhz": 1071,
+      "scaled_ratio": 0.0195,
+      "active_ratio": 0.0526,
+      "cores": 6
+    },
+    {
+      "label": "P",
+      "freq_mhz": 4416,
+      "scaled_ratio": 0.1208,
+      "active_ratio": 0.1221,
+      "cores": 4
+    }
+  ],
+  "gpu": {
+    "freq_mhz": 0,
+    "scaled_ratio": 0,
+    "active_ratio": 0
+  },
+  "process_count": 618,
+  "sensors_available": true,
+  "top_memory": [
+    {
+      "name": "browser",
+      "rss_mb": 1130.2,
+      "pct": 6.9
+    },
+    {
+      "name": "node",
+      "rss_mb": 620.4,
+      "pct": 3.8
+    },
+    {
+      "name": "python3",
+      "rss_mb": 410.7,
+      "pct": 2.5
+    },
+    {
+      "name": "editor",
+      "rss_mb": 380.1,
+      "pct": 2.3
+    },
+    {
+      "name": "WindowServer",
+      "rss_mb": 295.6,
+      "pct": 1.8
+    },
+    {
+      "name": "terminal",
+      "rss_mb": 210.3,
+      "pct": 1.3
+    },
+    {
+      "name": "music",
+      "rss_mb": 180.9,
+      "pct": 1.1
+    },
+    {
+      "name": "notes",
+      "rss_mb": 142.2,
+      "pct": 0.9
+    },
+    {
+      "name": "calendar",
+      "rss_mb": 96.5,
+      "pct": 0.6
+    },
+    {
+      "name": "finder",
+      "rss_mb": 82.4,
+      "pct": 0.5
+    }
+  ],
+  "disk_top": {
+    "scanned_at": "2026-10-19T17:22:05+08:00",
+    "age_seconds": 120,
+    "stale": false,
+    "duration_s": 47.6,
+    "items": [
+      {
+        "path": "~/Library/Containers",
+        "bytes": 16106127360,
+        "gb": 15.2
+      },
+      {
+        "path": "~/Library/Application Support",
+        "bytes": 6442450944,
+        "gb": 6.4
+      },
+      {
+        "path": "~/.cache",
+        "bytes": 6442450944,
+        "gb": 6.1
+      },
+      {
+        "path": "~/Library/Caches",
+        "bytes": 4294967296,
+        "gb": 4.6
+      },
+      {
+        "path": "/opt/homebrew",
+        "bytes": 4294967296,
+        "gb": 4.4
+      },
+      {
+        "path": "~/Documents",
+        "bytes": 3221225472,
+        "gb": 3.2
+      }
+    ]
+  },
+  "warranty": {
+    "expires": "2027-04-26",
+    "days_left": 189,
+    "expired": false,
+    "note": "示例数据"
+  },
+  "storage_health": {
+    "smart": "Verified",
+    "smart_ok": true,
+    "panic_count": 0,
+    "last_panic": null
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "ok": true,
+  "source": "query",
+  "fetched_at": "2026-10-19T17:24:05+08:00",
+  "generated_at": "2026-10-19T17:24:05+08:00",
+  "age_seconds": 0,
+  "task_id": "fixture-task-0001",
+  "plan": "免费档（无付费订阅）",
+  "weekly_used_pct": 29.0,
+  "weekly_resets_at_text": "Oct 20 at 3:32 PM CST",
+  "extra_tokens_used_pct": 0.0,
+  "extra_tokens_left_text": "1B tokens",
+  "transcript_total": 100,
+  "transcript_used": 13,
+  "transcript_remaining": 87,
+  "vm": {
+    "cpu": "2 核 · AMD EPYC 9D25 126-Core Processor",
+    "load": "0.08 / 0.23 / 0.26（1/5/15 分钟）",
+    "mem": "共 7.7 GB，程序实际占用约 0.8 GB（约 11%）",
+    "disk": "共 100 GB，已用 1.9 GB（2%），剩 97 GB",
+    "uptime": "1 小时 2 分"
+  }
+}

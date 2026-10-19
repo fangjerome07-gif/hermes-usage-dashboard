@@ -1,0 +1,89 @@
+{
+  "ok": true,
+  "generated_at": "2026-10-19T17:24:05+08:00",
+  "scripts": {
+    "codex": {
+      "name": "Codex 保活",
+      "state_ok": true,
+      "enabled": true,
+      "updated_at": 1792401845.902136,
+      "updated_at_text": "2026-10-19 20:05:00",
+      "targets": [
+        {
+          "key": "primary_5h",
+          "label": "5h",
+          "next_fire_at": 1792402637.402136,
+          "next_fire_text": "2026-10-19 20:18:12",
+          "last_fire_at": 1792384618.662136,
+          "last_fire_text": "2026-10-19 15:17:53",
+          "last_success_at": 1792384618.662136,
+          "last_success_text": "2026-10-19 15:17:53",
+          "tries": 0,
+          "retry_after": null,
+          "retry_after_text": null
+        },
+        {
+          "key": "secondary_weekly",
+          "label": "周",
+          "next_fire_at": 1792899155.402136,
+          "next_fire_text": "2026-10-25 14:13:30",
+          "last_fire_at": null,
+          "last_fire_text": null,
+          "last_success_at": null,
+          "last_success_text": null,
+          "tries": 0,
+          "retry_after": null,
+          "retry_after_text": null
+        }
+      ]
+    },
+    "agy": {
+      "name": "agy 保活",
+      "state_ok": true,
+      "enabled": true,
+      "updated_at": 1792401845.902136,
+      "updated_at_text": "2026-10-19 20:05:00",
+      "targets": [
+        {
+          "key": "gemini_5h",
+          "label": "Gemini 5h",
+          "next_fire_at": 1792401621.402136,
+          "next_fire_text": "2026-10-19 20:01:16",
+          "last_fire_at": null,
+          "last_fire_text": null,
+          "last_success_at": null,
+          "last_success_text": null,
+          "tries": 0,
+          "retry_after": null,
+          "retry_after_text": null
+        },
+        {
+          "key": "gemini_weekly",
+          "label": "Gemini 周",
+          "next_fire_at": 1792988421.402136,
+          "next_fire_text": "2026-10-26 15:01:16",
+          "last_fire_at": null,
+          "last_fire_text": null,
+          "last_success_at": null,
+          "last_success_text": null,
+          "tries": 0,
+          "retry_after": null,
+          "retry_after_text": null
+        },
+        {
+          "key": "claude_weekly",
+          "label": "Claude 周",
+          "next_fire_at": 1792989014.402136,
+          "next_fire_text": "2026-10-26 15:11:09",
+          "last_fire_at": null,
+          "last_fire_text": null,
+          "last_success_at": null,
+          "last_success_text": null,
+          "tries": 0,
+          "retry_after": null,
+          "retry_after_text": null
+        }
+      ]
+    }
+  }
+}

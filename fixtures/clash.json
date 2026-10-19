@@ -1,0 +1,93 @@
+{
+  "version": "v1.19.0",
+  "mode": "rule",
+  "tun_enabled": true,
+  "selected_chain": [
+    "机场入口",
+    "静态落地",
+    "DIRECT"
+  ],
+  "connection_count": 42,
+  "upload_bps": 12345,
+  "download_bps": 678901,
+  "entry": {
+    "group": "机场入口",
+    "selected": "HK-01",
+    "delay_ms": 42,
+    "members": 8,
+    "alive": 7
+  },
+  "exit_ip": "203.0.113.45",
+  "exit_is_static": true,
+  "upload_total": 123456789,
+  "download_total": 9876543210,
+  "memory_bytes": 123456789,
+  "active_connections": [
+    {
+      "process": "browser",
+      "host": "example.com",
+      "rule": "MATCH",
+      "chains": [
+        "机场入口",
+        "静态落地"
+      ],
+      "upload": 1234,
+      "download": 56789
+    },
+    {
+      "process": "node",
+      "host": "api.example.org",
+      "rule": "RuleSet",
+      "chains": [
+        "机场入口",
+        "静态落地"
+      ],
+      "upload": 4321,
+      "download": 123456
+    }
+  ],
+  "rule_mix": [
+    {
+      "rule": "RuleSet",
+      "count": 18
+    },
+    {
+      "rule": "MATCH",
+      "count": 12
+    },
+    {
+      "rule": "DIRECT",
+      "count": 8
+    },
+    {
+      "rule": "REJECT",
+      "count": 4
+    }
+  ],
+  "profile": {
+    "uid": "demo-profile",
+    "name": "demo"
+  },
+  "subscription": {
+    "upload": 123456789,
+    "download": 45678901234,
+    "total": 107374182400,
+    "expire": 1794993893,
+    "expire_at": "2026-11-18",
+    "next_reset": "2026-11-18",
+    "days_to_reset": 30,
+    "cycle_days": 30,
+    "used": 48318382080,
+    "remaining": 59055800320,
+    "updated_at": "2026-10-19T17:24:53+08:00",
+    "previous_reset": "2026-10-19"
+  },
+  "checkin": {
+    "date": "2026-10-19",
+    "state": "success",
+    "msg": "示例签到",
+    "gain_mb": 100,
+    "checked_at": "2026-10-19T17:24:05+08:00",
+    "http_status": 200
+  }
+}

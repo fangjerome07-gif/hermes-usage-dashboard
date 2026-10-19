@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <title>本地用量看板</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/app.css?v=5.96">
+  <script src="/pure.js?v=5.96" defer></script>
+  <script src="/app.js?v=5.96" defer></script>
+</head>
+<body>
+  <!-- 顶部毛玻璃导航栏 -->
+  <header class="app-header">
+    <div class="header-container">
+      <div class="brand">
+        <div class="brand-logo">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <div class="brand-text">
+          <h1>用量看板</h1>
+          <span class="live-status"><span class="status-dot"></span>系统在线 · 手动刷新</span>
+        </div>
+      </div>
+      <div class="header-actions">
+        <div class="currency-group">
+          <div class="currency-switch" id="currency-switch" role="group" aria-label="币种切换">
+            <button type="button" class="cur-btn active" data-cur="USD" title="美元显示">$</button>
+            <button type="button" class="cur-btn" data-cur="CNY" title="人民币显示（按每日汇率折算）">¥</button>
+          </div>
+          <span class="currency-note" id="currency-note" title=""></span>
+        </div>
+        <div class="refresh-group">
+          <button id="refresh-all" class="btn-refresh" type="button" aria-label="全量刷新">
+            <svg class="spin-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.85.83 6.72 2.24L21 8"/><path d="M21 3v5h-5"/></svg>
+            <span class="btn-text">全部刷新</span>
+          </button>
+          <span class="refresh-time-tag" id="last-refresh-time" title="最后全量刷新时间">刷新时间: 载入中</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="app-main">
+    <!-- 移动端分段控制器 Segmented Control（切换独立页面） -->
+    <nav class="segmented-control" aria-label="页面切换">
+      <button class="seg-btn active" type="button" data-filter="all" aria-current="page">全部概览</button>
+      <button class="seg-btn" type="button" data-filter="codex">Codex</button>
+      <button class="seg-btn" type="button" data-filter="wb">WorkBuddy</button>
+      <button class="seg-btn" type="button" data-filter="agy">Antigravity</button>
+      <button class="seg-btn" type="button" data-filter="muse">Muse</button>
+      <button class="seg-btn" type="button" data-filter="mac">Mac</button>
+      <button class="seg-btn" type="button" data-filter="clash">Clash</button>
+    </nav>
+
+    <!-- 1. 全部概览独立页面 (包含服务概况进度条 + 今日汇总 + 七天汇总 + 近七天逐日明细折叠) -->
+    <section class="view-panel" id="view-all">
+      <!-- 服务概况模块（进度条、健康检测、点击直达对应详情页面） -->
+      <div class="preview-deck" id="preview-deck" aria-label="服务速览与快捷跳转">
+        <!-- 1. Codex 概况模块 -->
+        <div class="preview-card" data-target="codex" role="button" tabindex="0" title="点击跳转至 Codex 详情">
+          <div class="preview-card-head">
+            <div class="preview-card-name">
+              <span class="preview-dot codex-dot"></span>
+              <strong>Codex 额度</strong><span class="preview-reset-note" id="preview-codex-reset"></span>
+            </div>
+            <span class="preview-tag" id="preview-codex-tag">统一账本</span>
+          </div>
+          <div class="preview-bars" id="preview-codex-bars">
+            <div class="preview-bar-placeholder">加载中...</div>
+          </div>
+          <div class="preview-card-foot" id="preview-codex-foot">
+            <span class="preview-foot-hint" id="preview-codex-foot-hint">点击查看双窗口与明细 →</span>
+            <span class="preview-updated" id="preview-codex-updated">更新中</span>
+          </div>
+        </div>
+
+        <!-- 2. WorkBuddy 概况模块 -->
+        <div class="preview-card" data-target="wb" role="button" tabindex="0" title="点击跳转至 WorkBuddy 详情">
+          <div class="preview-card-head">
+            <div class="preview-card-name">
+              <span class="preview-dot wb-dot"></span>
+              <strong>WorkBuddy 账号池</strong>
+              <span class="realm-pill" id="preview-wb-realm">出口：加载中</span>
+            </div>
+            <span class="preview-tag" id="preview-wb-tag">多账号</span>
+          </div>
+          <div class="preview-bars" id="preview-wb-bars">
+            <div class="preview-bar-placeholder">加载中...</div>
+          </div>
+          <div class="preview-card-foot" id="preview-wb-foot">
+            <span class="preview-foot-hint" id="preview-wb-foot-hint">点击查看账号池与签到 →</span>
+            <span class="preview-updated" id="preview-wb-updated">更新中</span>
+          </div>
+        </div>
+
+        <!-- 3. agy（Antigravity CLI）概况模块 -->
+        <div class="preview-card" data-target="agy" role="button" tabindex="0" title="点击跳转至 Antigravity 详情">
+          <div class="preview-card-head">
+            <div class="preview-card-name">
+              <span class="preview-dot agy-dot"></span>
+              <strong>Antigravity 额度</strong>
+            </div>
+            <span class="preview-tag" id="preview-agy-tag">PRO ✅</span>
+          </div>
+          <div class="preview-bars" id="preview-agy-bars">
+            <div class="preview-bar-placeholder">加载中...</div>
+          </div>
+          <div class="preview-plan-note">Google AI Pro（5 TB） · 续订：2027年5月18日</div>
+          <div class="preview-card-foot" id="preview-agy-foot">
+            <span class="preview-foot-hint" id="preview-agy-foot-hint">点击查看双模型池限额 →</span>
+            <span class="preview-updated" id="preview-agy-updated">更新中</span>
+          </div>
+        </div>
+
+        <!-- 4. Muse 概况模块 -->
+        <div class="preview-card" data-target="muse" role="button" tabindex="0" title="点击跳转至 Muse 详情">
+          <div class="preview-card-head">
+            <div class="preview-card-name">
+              <span class="preview-dot muse-dot"></span>
+              <strong>Muse 额度</strong>
+            </div>
+            <span class="preview-tag" id="preview-muse-tag">额度</span>
+          </div>
+          <div class="preview-bars" id="preview-muse-bars">
+            <div class="preview-bar-placeholder">加载中...</div>
+          </div>
+          <div class="preview-card-foot" id="preview-muse-foot">
+            <span class="preview-foot-hint" id="preview-muse-foot-hint">点击查看额度与 VM 状态 →</span>
+            <span class="preview-updated" id="preview-muse-updated">更新中</span>
+          </div>
+        </div>
+
+        <!-- 6. 本机 Mac 迷你卡：磁盘/内存/风扇/温度，点击进入详情；全网搜索并入卡内小字 -->
+        <div class="preview-card" data-target="mac" role="button" tabindex="0" id="preview-mac" title="点击跳转至 Mac 详情">
+          <div class="preview-card-head">
+            <div class="preview-card-name">
+              <span class="preview-dot mac-dot"></span>
+              <strong>本机 Mac</strong>
+            </div>
+            <span class="preview-tag" id="preview-mac-tag">M4</span>
+          </div>
+          <div class="preview-bars" id="preview-mac-bars">
+            <div class="preview-bar-placeholder">加载中...</div>
+          </div>
+          <div class="preview-card-foot" id="preview-mac-foot">
+            <span class="preview-foot-hint" id="preview-mac-foot-hint">磁盘 · 内存 · 风扇</span>
+            <span class="preview-updated" id="preview-mac-updated">更新中</span>
+          </div>
+        </div>
+
+      </div>
+
+      <button class="clash-preview" id="clash-preview" type="button" aria-label="查看 Clash 详情">
+        <div class="clash-preview-header">
+          <div class="clash-preview-title">
+            <span class="preview-dot clash-dot"></span>
+            <strong>Clash 链路与内核</strong>
+          </div>
+          <span class="badge-status" id="clash-preview-status">加载中</span>
+          <span class="clash-preview-hint">详情 →</span>
+        </div>
+        <div class="clash-preview-chain" id="clash-preview-chain">当前所选链路：加载中…</div>
+        <div class="clash-preview-entry" id="clash-preview-entry">入口节点：加载中…</div>
+        <div class="clash-preview-quota" id="clash-preview-quota">订阅流量：加载中…</div>
+        <div class="clash-preview-checkin" id="clash-preview-checkin">签到：加载中…</div>
+        <div class="clash-preview-foot">
+          <span class="clash-preview-foot-hint">点击查看链路、订阅与路由 →</span>
+          <span class="preview-updated" id="preview-clash-updated">更新中</span>
+        </div>
+      </button>
+
+      <!-- 今日用量“汇总” -->
+      <section class="summary-section" id="today-summary-section">
+        <header class="summary-section-head">
+          <div class="summary-section-title">
+            <span class="summary-icon">⚡</span>
+            <h3>今日用量汇总</h3>
+          </div>
+          <span class="summary-tag" id="today-time-range">今日 00:00 至今</span>
+        </header>
+        <div class="summary-section-body" id="today-summary-content">
+          <div class="preview-bar-placeholder">汇总数据计算中...</div>
+        </div>
+      </section>
+
+      <!-- 七天用量“汇总” -->
+      <section class="summary-section" id="week-summary-section">
+        <header class="summary-section-head">
+          <div class="summary-section-title">
+            <span class="summary-icon">📅</span>
+            <h3>近七天用量汇总</h3>
+          </div>
+          <span class="summary-tag">跨 3 供应商统一审计</span>
+        </header>
+        <div class="summary-section-body" id="week-summary-content">
+          <div class="preview-bar-placeholder">汇总数据计算中...</div>
+        </div>
+      </section>
+
+      <!-- 折叠块：近七天每一天的明细 -->
+      <section class="summary-section" id="daily-history-section">
+        <div id="daily-history-content">
+          <div class="preview-bar-placeholder">逐日历史记录加载中...</div>
+        </div>
+      </section>
+    </section>
+
+    <!-- 2. CODEX 独立详情页面 -->
+    <section class="view-panel is-hidden" id="view-codex">
+      <article class="card service-card" id="codex-card" data-key="codex">
+        <header class="card-head">
+          <div class="card-title-group">
+            <div class="service-icon codex-icon">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg>
+            </div>
+            <div>
+              <h2>Codex 额度<span class="card-updated" data-role="updated">更新中</span></h2>
+              <p class="service-desc">ChatGPT OAuth 与 Hermes 实例用量</p>
+            </div>
+          </div>
+          <div class="card-meta">
+            <span class="badge-status" data-role="status">加载中</span>
+            <button class="btn-card-refresh" type="button" data-action="refresh" title="刷新 Codex" aria-label="刷新 Codex">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.85.83 6.72 2.24L21 8"/><path d="M21 3v5h-5"/></svg>
+            </button>
+          </div>
+        </header>
+        <div class="card-body" data-role="content"></div>
+        <div class="card-error" data-role="error" hidden></div>
+      </article>
+
+      <div class="price-section" id="codex-price-section"></div>
+    </section>
+
+    <!-- 3. WORKBUDDY 独立详情页面 -->
+    <section class="view-panel is-hidden" id="view-wb">
+      <article class="card service-card" id="wb-card" data-key="wb">
+        <header class="card-head">
+          <div class="card-title-group">
+            <div class="service-icon wb-icon">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/><line x1="8" y1="16" x2="8.01" y2="16"/><line x1="16" y1="16" x2="16.01" y2="16"/></svg>
+            </div>
+            <div>
+              <h2>WorkBuddy 额度<span class="card-updated" data-role="updated">更新中</span></h2>
+              <p class="service-desc">网关账号池、积分包与签到福利</p>
+            </div>
+          </div>
+          <div class="card-meta">
+            <span class="badge-status" data-role="status">加载中</span>
+            <button class="btn-card-refresh" type="button" data-action="refresh" title="刷新 WorkBuddy" aria-label="刷新 WorkBuddy">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.85.83 6.72 2.24L21 8"/><path d="M21 3v5h-5"/></svg>
+            </button>
+          </div>
+        </header>
+        <div class="card-body" data-role="content"></div>
+        <div class="card-error" data-role="error" hidden></div>
+      </article>
+
+      <div class="price-section" id="wb-price-section"></div>
+    </section>
+
+    <!-- 4. MUSE 独立详情页面 -->
+    <section class="view-panel is-hidden" id="view-muse">
+      <article class="card service-card" id="muse-card" data-key="muse">
+        <header class="card-head">
+          <div class="card-title-group">
+            <div class="service-icon muse-icon">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.5 7.5L22 12l-7.5 2.5L12 22l-2.5-7.5L2 12l7.5-2.5z"/></svg>
+            </div>
+            <div>
+              <h2>Muse 额度<span class="card-updated" data-role="updated">更新中</span></h2>
+              <p class="service-desc">免费额度、转录次数与 VM 状态（经 mini 用量桥）</p>
+            </div>
+          </div>
+          <div class="card-meta">
+            <span class="badge-status" data-role="status">加载中</span>
+            <button class="btn-card-refresh" type="button" data-action="refresh" title="刷新 Muse" aria-label="刷新 Muse">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.85.83 6.72 2.24L21 8"/><path d="M21 3v5h-5"/></svg>
+            </button>
+          </div>
+        </header>
+        <div class="card-body" data-role="content"></div>
+        <div class="card-error" data-role="error" hidden></div>
+      </article>
+    </section>
+
+    <!-- 5. 本机 Mac 独立详情页面 -->
+    <section class="view-panel is-hidden" id="view-mac">
+      <article class="card service-card" id="mac-card" data-key="mac">
+        <header class="card-head">
+          <div class="card-title-group">
+            <div class="service-icon mac-icon">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 2v2M15 2v2M9 20v2M15 20v2M2 9h2M2 15h2M20 9h2M20 15h2"/></svg>
+            </div>
+            <div>
+              <h2>本机 Mac<span class="card-updated" data-role="updated">更新中</span></h2>
+              <p class="service-desc">磁盘、内存、风扇、温度与负载（macmon 免 sudo 传感器）</p>
+            </div>
+          </div>
+          <div class="card-meta">
+            <span class="badge-status" data-role="status">加载中</span>
+            <button class="btn-card-refresh" type="button" data-action="refresh" title="刷新 Mac 状态" aria-label="刷新 Mac 状态">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.85.83 6.72 2.24L21 8"/><path d="M21 3v5h-5"/></svg>
+            </button>
+          </div>
+        </header>
+        <div class="card-body" data-role="content"></div>
+        <div class="card-error" data-role="error" hidden></div>
+      </article>
+    </section>
+
+    <!-- 6. agy（Antigravity CLI）独立详情页面 -->
+    <section class="view-panel is-hidden" id="view-agy">
+      <article class="card service-card" id="agy-card" data-key="agy">
+        <header class="card-head">
+          <div class="card-title-group">
+            <div class="service-icon agy-icon">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a7.9 7.9 0 0 0 .6-3 7.9 7.9 0 0 0-.6-3"/><path d="M4.6 9a7.9 7.9 0 0 0-.6 3 7.9 7.9 0 0 0 .6 3"/><path d="M9 4.6A7.9 7.9 0 0 1 12 4a7.9 7.9 0 0 1 3 .6"/><path d="M15 19.4a7.9 7.9 0 0 1-3 .6 7.9 7.9 0 0 1-3-.6"/></svg>
+            </div>
+            <div>
+              <h2>Antigravity 额度<span class="card-updated" data-role="updated">更新中</span></h2>
+              <p class="service-desc">Antigravity CLI 双模型池限额 · 官方 /usage</p>
+            </div>
+          </div>
+          <div class="card-meta">
+            <span class="badge-status" data-role="status">加载中</span>
+            <button class="btn-card-refresh" type="button" data-action="refresh" title="刷新 Antigravity" aria-label="刷新 Antigravity">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.85.83 6.72 2.24L21 8"/><path d="M21 3v5h-5"/></svg>
+            </button>
+          </div>
+        </header>
+        <div class="card-body" data-role="content"></div>
+        <div class="card-error" data-role="error" hidden></div>
+      </article>
+    </section>
+
+    <!-- 7. CLASH 独立详情页面 -->
+    <section class="view-panel is-hidden" id="view-clash">
+      <article class="card service-card" id="clash-card" data-key="clash">
+        <header class="card-head">
+          <div class="card-title-group">
+            <div class="service-icon clash-icon">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="2" y1="12" x2="22" y2="12"/>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+              </svg>
+            </div>
+            <div>
+              <h2>Clash 链路与内核<span class="card-updated" id="clash-updated">更新中</span></h2>
+              <p class="service-desc">Mihomo 内核与网络代理链路监控</p>
+            </div>
+          </div>
+          <div class="card-meta">
+            <span class="badge-status" id="clash-status">加载中</span>
+            <button class="btn-card-refresh" id="clash-refresh" type="button" data-action="refresh" title="刷新 Clash 状态" aria-label="刷新 Clash 状态">
+              <svg class="spin-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.85.83 6.72 2.24L21 8"/><path d="M21 3v5h-5"/></svg>
+            </button>
+          </div>
+        </header>
+        <div class="card-body clash-body" id="clash-content">
+          <div class="preview-bar-placeholder">正在读取本机内核…</div>
+        </div>
+        <div class="card-foot clash-foot">
+          <span class="clash-foot-note">只读采样 · 打开页面刷新一次，之后手动刷新 · 本地 Unix Socket 直连内核</span>
+        </div>
+      </article>
+    </section>
+
+    <footer class="app-footer">
+      <p>数据来自本机命令 · 限制本机、局域网及 Tailscale 访问</p>
+    </footer>
+  </div>
+</body>
+</html>

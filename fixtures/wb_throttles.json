@@ -1,0 +1,80 @@
+{
+  "timestamp": "2026-10-19T17:22:53+08:00",
+  "accounts": [
+    {
+      "nickname": "账号A",
+      "realm": "cn",
+      "enabled": true,
+      "expires_at": 1794129773,
+      "last_error": "",
+      "last_error_detail": "",
+      "last_error_reset_at": null,
+      "in_cooldown": false,
+      "model_cooldowns": [],
+      "throttle_unattributed": false,
+      "disabled": false,
+      "last_checkin": "2026-10-19 01:22:53"
+    },
+    {
+      "nickname": "账号B",
+      "realm": "cn",
+      "enabled": true,
+      "expires_at": 1794133373,
+      "last_error": "",
+      "last_error_detail": "",
+      "last_error_reset_at": null,
+      "in_cooldown": false,
+      "model_cooldowns": [],
+      "throttle_unattributed": false,
+      "disabled": false,
+      "last_checkin": "2026-10-19 01:22:53"
+    },
+    {
+      "nickname": "账号C",
+      "realm": "cn",
+      "enabled": true,
+      "expires_at": 1794136973,
+      "last_error": "",
+      "last_error_detail": "",
+      "last_error_reset_at": null,
+      "in_cooldown": false,
+      "model_cooldowns": [],
+      "throttle_unattributed": false,
+      "disabled": false,
+      "last_checkin": "2026-10-19 01:22:53"
+    },
+    {
+      "nickname": "账号D",
+      "realm": "cn",
+      "enabled": true,
+      "expires_at": 1794140573,
+      "last_error": "",
+      "last_error_detail": "",
+      "last_error_reset_at": null,
+      "in_cooldown": false,
+      "model_cooldowns": [],
+      "throttle_unattributed": false,
+      "disabled": false,
+      "last_checkin": "2026-10-19 01:22:53"
+    },
+    {
+      "nickname": "账号E",
+      "realm": "intl",
+      "enabled": true,
+      "expires_at": 1794144173,
+      "last_error": "",
+      "last_error_detail": "",
+      "last_error_reset_at": null,
+      "in_cooldown": false,
+      "model_cooldowns": [],
+      "throttle_unattributed": false,
+      "disabled": false,
+      "last_checkin": "2026-10-19 01:22:53"
+    }
+  ],
+  "throttles": {
+    "active": [],
+    "unattributed": []
+  },
+  "warnings": []
+}

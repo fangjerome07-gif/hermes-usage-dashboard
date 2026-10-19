@@ -1,0 +1,27 @@
+{
+  "ok": true,
+  "generated_at": "2026-10-19T17:24:05+08:00",
+  "active_label": "pool-A",
+  "keys": [
+    {
+      "label": "pool-B",
+      "note": "2026-08-24 起全实例启用",
+      "query_ok": true,
+      "active": false,
+      "used": 0,
+      "limit": 1000,
+      "remaining": 1000,
+      "error": null
+    },
+    {
+      "label": "pool-A",
+      "note": "旧池，月度重置后可作为备胎",
+      "query_ok": true,
+      "active": true,
+      "used": 771,
+      "limit": 1000,
+      "remaining": 229,
+      "error": null
+    }
+  ]
+}
